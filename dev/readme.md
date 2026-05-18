@@ -30,7 +30,7 @@ docker compose --env-file custom.env \
 docker compose -p frappe -f compose.custom.yaml up -d
 
 # Create local host
-docker compose -p frappe exec backend bench new-site localhost \
+docker compose -p frappe exec -T backend bench new-site localhost \
   --mariadb-user-host-login-scope='%' \
   --db-root-password 123 \
   --admin-password admin \
@@ -39,9 +39,24 @@ docker compose -p frappe exec backend bench new-site localhost \
   <!-- --install-app helpdesk -->
 
 
-docker compose -p frappe exec backend bench new-site frappe.extaa.com \
+docker compose -p frappe exec -T backend bench new-site frappe.extaa.com \
+  --mariadb-user-host-login-scope='%' \
+  --db-root-password 123 \
+  --admin-password admin \
+  --install-app erpnext \
+  --install-app hrms 
+
+docker compose -p frappe exec -T backend bench new-site frappe-dev.extaa.com \
   --mariadb-user-host-login-scope='%' \
   --db-root-password 123 \
   --admin-password admin \
   --install-app erpnext \
   --install-app hrms \
+  --install-app crm \
+  --install-app insights 
+## To stop and remove containers
+docker compose -p frappe -f compose.custom.yaml down
+
+## Remove data
+docker volume rm frappe_docker_db-data
+docker compose -p frappe -f compose.custom.yaml down -v

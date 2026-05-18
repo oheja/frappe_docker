@@ -1,5 +1,13 @@
 [
   {
+    "url": "https://github.com/frappe/agriculture",
+    "branch": "develop"
+  },
+  {
+    "url": "https://github.com/frappe/insights",
+    "branch": "develop"
+  },
+  {
     "url": "https://github.com/frappe/erpnext",
     "branch": "version-16"
   },
