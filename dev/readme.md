@@ -16,6 +16,7 @@ docker build \
  --build-arg=FRAPPE_BRANCH=version-16 \
  --build-arg=APPS_JSON_BASE64=$APPS_JSON_BASE64 \
  --tag=custom:16 \
+ --no-cache \
  --file=images/layered/Containerfile .
 
 # Create compose 
@@ -50,10 +51,12 @@ docker compose -p frappe exec -T backend bench new-site frappe-dev.extaa.com \
   --mariadb-user-host-login-scope='%' \
   --db-root-password 123 \
   --admin-password admin \
+  --install-app flower_stock \
   --install-app erpnext \
   --install-app hrms \
   --install-app crm \
-  --install-app insights 
+  --install-app insights \
+  --install-app csf_ke
 ## To stop and remove containers
 docker compose -p frappe -f compose.custom.yaml down
 

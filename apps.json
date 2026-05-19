@@ -1,6 +1,15 @@
 [
+
+  {
+    "url": "https://github.com/navariltd/navari_csf_ke",
+    "branch": "develop"
+  },
   {
     "url": "https://github.com/frappe/agriculture",
+    "branch": "develop"
+  },
+  {
+    "url": "https://github.com/oheja/flower_stock",
     "branch": "develop"
   },
   {
