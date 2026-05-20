@@ -8,7 +8,7 @@ services:
     image: custom:16
     networks:
       default: null
-    platform: linux/amd64
+    platform: linux/arm64
     pull_policy: missing
     restart: unless-stopped
     volumes:
@@ -42,7 +42,7 @@ services:
     image: custom:16
     networks:
       default: null
-    platform: linux/amd64
+    platform: linux/arm64
     pull_policy: missing
     restart: on-failure
     volumes:
@@ -100,7 +100,7 @@ services:
     image: custom:16
     networks:
       default: null
-    platform: linux/amd64
+    platform: linux/arm64
     ports:
       - mode: ingress
         target: 8080
@@ -126,7 +126,7 @@ services:
     image: custom:16
     networks:
       default: null
-    platform: linux/amd64
+    platform: linux/arm64
     pull_policy: missing
     restart: unless-stopped
     volumes:
@@ -147,7 +147,7 @@ services:
     image: custom:16
     networks:
       default: null
-    platform: linux/amd64
+    platform: linux/arm64
     pull_policy: missing
     restart: unless-stopped
     volumes:
@@ -181,7 +181,7 @@ services:
     image: custom:16
     networks:
       default: null
-    platform: linux/amd64
+    platform: linux/arm64
     pull_policy: missing
     restart: unless-stopped
     volumes:
@@ -200,7 +200,7 @@ services:
     image: custom:16
     networks:
       default: null
-    platform: linux/amd64
+    platform: linux/arm64
     pull_policy: missing
     restart: unless-stopped
     volumes:

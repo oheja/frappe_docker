@@ -7,6 +7,7 @@ docker compose -p frappe -f compose.custom.yaml down
 # Build VERSION 16
 
 docker build \
+ --platform linux/arm64 \
  --build-arg=FRAPPE_PATH=https://github.com/frappe/frappe \
  --build-arg=FRAPPE_BRANCH=version-16 \
  --build-arg=APPS_JSON_BASE64=$APPS_JSON_BASE64 \
@@ -30,9 +31,12 @@ docker compose -p frappe exec -T backend bench new-site localhost \
   --mariadb-user-host-login-scope='%' \
   --db-root-password 123 \
   --admin-password admin \
+  --install-app flower_stock \
   --install-app erpnext \
   --install-app hrms \
-  <!-- --install-app helpdesk -->
+  --install-app crm \
+  --install-app insights \
+  --install-app csf_ke
 
 
 docker compose -p frappe exec -T backend bench new-site frappe.extaa.com \
