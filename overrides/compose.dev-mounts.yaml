@@ -7,6 +7,14 @@ services:
       # Optional: Mount logs for easy access
       - ./logs:/home/frappe/frappe-bench/logs
 
+      # Share built assets with frontend
+      - assets:/home/frappe/frappe-bench/sites/assets
+
+  frontend:
+    volumes:
+      # Share built assets with backend
+      - assets:/home/frappe/frappe-bench/sites/assets
+
   queue-long:
     volumes:
       - /Users/rutilea/extaa/flower_stock:/home/frappe/frappe-bench/apps/flower_stock:cached
@@ -22,3 +30,6 @@ services:
   websocket:
     volumes:
       - /Users/rutilea/extaa/flower_stock:/home/frappe/frappe-bench/apps/flower_stock:cached
+
+volumes:
+  assets:
