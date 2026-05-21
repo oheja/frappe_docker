@@ -75,7 +75,18 @@ docker compose -p frappe exec -T backend bench --site frappe-dev.extaa.com insta
 
 docker compose -p frappe exec -T backend bench --site frappe-dev.extaa.com migrate
 
+docker compose -p frappe exec -T backend bench --site localhost migrate
 
+1. Check existing sites
+
+docker compose -p frappe exec -T backend bench --site localhost list-apps
+2. Update apps
+docker compose -p frappe exec -T backend bench --site localhost install-app erpnext
+docker compose -p frappe exec -T backend bench --site localhost install-app hrms
+docker compose -p frappe exec -T backend bench --site localhost install-app crm
+docker compose -p frappe exec -T backend bench --site localhost install-app insights
+docker compose -p frappe exec -T backend bench --site localhost install-app csf_ke
+docker compose -p frappe exec -T backend bench --site localhost install-app flower_stock
 ## Remove data
 docker volume rm frappe_docker_db-data
 docker compose -p frappe -f compose.custom.yaml down -v
