@@ -1,0 +1,24 @@
+services:
+  backend:
+    volumes:
+      # Mount your custom app for live development
+      - /Users/rutilea/extaa/flower_stock:/home/frappe/frappe-bench/apps/flower_stock:cached
+
+      # Optional: Mount logs for easy access
+      - ./logs:/home/frappe/frappe-bench/logs
+
+  queue-long:
+    volumes:
+      - /Users/rutilea/extaa/flower_stock:/home/frappe/frappe-bench/apps/flower_stock:cached
+
+  queue-short:
+    volumes:
+      - /Users/rutilea/extaa/flower_stock:/home/frappe/frappe-bench/apps/flower_stock:cached
+
+  scheduler:
+    volumes:
+      - /Users/rutilea/extaa/flower_stock:/home/frappe/frappe-bench/apps/flower_stock:cached
+
+  websocket:
+    volumes:
+      - /Users/rutilea/extaa/flower_stock:/home/frappe/frappe-bench/apps/flower_stock:cached
