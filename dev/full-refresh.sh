@@ -3,6 +3,7 @@
 # Full refresh for ANY changes (Doctypes, JS/CSS, Python)
 # Handles database migrations + asset rebuilds + cache clear + restart
 # Faster than dev/refresh.sh — no container down/up
+docker compose -p frappe exec -T backend bench --site localhost list-apps
 
 echo "=== Running migrate ==="
 docker compose -p frappe exec -T backend bench --site localhost migrate
@@ -20,3 +21,5 @@ echo "=== Restarting services ==="
 docker compose -p frappe restart backend frontend
 
 echo "=== Done ==="
+
+docker compose -p frappe exec -T backend bench --site localhost list-apps
