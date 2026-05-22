@@ -12,11 +12,11 @@ services:
 
   frontend:
     volumes:
+      # Mount your custom app so frontend can build it too
+      - /Users/rutilea/extaa/flower_stock:/home/frappe/frappe-bench/apps/flower_stock:cached
+
       # Share built assets with backend
       - assets:/home/frappe/frappe-bench/sites/assets
-
-  queue-long:
-    volumes:
       - /Users/rutilea/extaa/flower_stock:/home/frappe/frappe-bench/apps/flower_stock:cached
 
   queue-short:

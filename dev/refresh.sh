@@ -13,13 +13,12 @@ docker compose -p frappe exec -T backend bench --site localhost set-config devel
 
 docker compose -p frappe exec -T backend rm -rf /home/frappe/frappe-bench/sites/assets/flower_stock
 
-docker compose -p frappe exec -T backend bench --site localhost migrate
+docker compose -p frappe exec -T backend bench build --force
 
-docker compose -p frappe exec -T backend bench build --app flower_stock --force
+docker compose -p frappe exec -T frontend bench build --force
 
 docker compose -p frappe exec -T backend bench --site localhost clear-cache
 
-docker compose -p frappe restart backend
+docker compose -p frappe restart backend frontend
 
 docker compose -p frappe exec -T backend bench --site localhost list-apps
-

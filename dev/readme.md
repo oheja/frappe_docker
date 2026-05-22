@@ -1,5 +1,5 @@
 # Set up image 
-export APPS_JSON_BASE64=$(base64 -w 0 apps.json)
+export APPS_JSON_BASE64=$(base64 -i apps.json)
 
 ## To stop and remove containers
 docker compose -p frappe -f compose.custom.yaml down
