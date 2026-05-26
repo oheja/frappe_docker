@@ -34,9 +34,7 @@ docker compose -p frappe exec -T backend bench new-site localhost \
   --install-app flower_stock \
   --install-app erpnext \
   --install-app hrms \
-  --install-app crm \
-  --install-app insights \
-  --install-app csf_ke
+  --install-app crm 
 
 
 docker compose -p frappe exec -T backend bench new-site frappe.extaa.com \
